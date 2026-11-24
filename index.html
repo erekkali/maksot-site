@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EEB60RZCZL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EEB60RZCZL');
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href');
+    if (h.indexOf('wa.me') > -1) gtag('event', 'whatsapp_click', {link_text: a.textContent.trim()});
+    else if (h.indexOf('mailto:') === 0) gtag('event', 'email_click', {link_text: a.textContent.trim(), email: h.slice(7).split('?')[0]});
+  });
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MAKSOT Tech Help & Print</title>
